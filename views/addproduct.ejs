@@ -15,37 +15,46 @@
 
 </head>
 <body>
+    <%- include('tap')%>
     <div class="image"></div>
     <div class="container-lgx a" style="min-height: 829px;">
-        
-        <form class="user bg-w r" action="/addproducts" method="POST" novalidate style="width: 828px;left:50%;">
-
-            <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Add Product!</h1>
-            </div>
-            <div class="form-group mb-3">
-                <label class="form-check-label">Product Name</label>
-                <input type="text" name="product_name" class="form-control form-control-user"
-                    placeholder="product_name">
-            </div>
-            
-            <div class="form-group mb-3">
-                <label class="form-check-label">Product Stock </label>
-                <input type="text" name="product_stock" class="form-control form-control-user"
-                    placeholder="product_stock">
-            </div>
-           
-            <div class="form-group mb-3">
-                <label class="form-check-label">Product image</label>
-                <input type="file" name="product_image" class="form-control form-control-user"
-                    placeholder="product_image">
-            </div>
-            <hr />
-            <div class="text-center">
-                <input type="submit" class="btn btn-outline-primary mb-3" value="Confirm" style="width:150px;">
-            </div>>
-
-        </form>
+        <div class="col-sm-6">
+            <div class="overall3">
+              <div class="form">
+                <div class="circle">
+                  <center>
+                    <h1>เพิ่มรายการข้อมูล</h1>
+                  </center>
+                  <form action="/addproducts" method="POST" novalidate>
+                    <div class="form-group">
+                      <label for="_rname">Name</label>
+                      <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Name"
+                        value="<%= (locals.old_data) ? old_data.user_name : ''; %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label">Product Name</label>
+                        <input type="text" name="product_name" class="form-control form-control-user"
+                            placeholder="product_name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label">Product image</label>
+                        <input type="file" name="product_image" class="form-control form-control-user"
+                            placeholder="product_image">
+                    </div>
+                   
+                   
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-outline-primary mb-3" value="Confirm" style="width:150px;">
+                    </div>>
+      
+                  </form>
+      
+                </div>
+      
+              </div>
+            </div><br>
+          </div>
+     
     </div>
 </body>
 </html>
