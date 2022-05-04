@@ -82,7 +82,7 @@ app.get('/addproduct', (req, res, next) => {
 })
 
 app.get('/pro', (req, res, next) => {
-    //ค้างงงงงงงงงงงงงงงงงงงงงงงงงงงงงง
+    
     con.query("SELECT users.name,users.user_id,product.product,borrow.status,borrow.date FROM borrow INNER JOIN users ON borrow.id_user = users.id INNER JOIN product ON borrow.id_product =product.id WHERE users.id = ?;",[req.session.userID],(err, result) => {
         //console.log(result[0].date);
         res.render('pro', { name: req.session.user_name ,result:result});
