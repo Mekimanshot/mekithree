@@ -28,11 +28,6 @@
                   </center>
                   <form action="/addproducts" method="POST" novalidate>
                     <div class="form-group">
-                      <label for="_rname">Name</label>
-                      <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Name"
-                        value="<%= (locals.old_data) ? old_data.user_name : ''; %>" required>
-                    </div>
-                    <div class="form-group">
                         <label class="form-check-label">Product Name</label>
                         <input type="text" name="product_name" class="form-control form-control-user"
                             placeholder="product_name">
